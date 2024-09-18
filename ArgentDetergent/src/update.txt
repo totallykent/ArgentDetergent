@@ -1,0 +1,181 @@
+//Customer Form
+public partial class Customer : Form
+{
+    string imgCustomer;
+    GlobalProcedure g_proc = new GlobalProcedure();
+
+    public Customer()
+    {
+        InitializeComponent();
+    }
+
+    private void btnBrowse_Click(object sender, EventArgs e)
+    {
+        OpenFileDialog ofdPic = new OpenFileDialog();
+        ofdPic.Filter = "Images Files (*.jpg;*gif;*jpeg;)|*.jpg;*gif;*jpeg;";
+        if (ofdPic.ShowDialog() == DialogResult.OK)
+        {
+            picCustomerPic.Image = new Bitmap(ofdPic.FileName);
+            imgCustomer = ofdPic.FileName;
+        }
+
+    }
+
+    private void btnSave_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            g_proc.sqlCommand.Parameters.Clear();
+            g_proc.sqlCommand.CommandText = "procInsertCustomer";
+            g_proc.sqlCommand.CommandType = CommandType.StoredProcedure;
+            g_proc.sqlCommand.Parameters.AddWithValue("@p_fullname", txtCustomerName.Text);
+            g_proc.sqlCommand.Parameters.AddWithValue("@p_birthdate", dateCustomerBirthday.Value);
+            g_proc.sqlCommand.Parameters.AddWithValue("@p_gender", cmbCustomerGender.Text);
+            g_proc.sqlCommand.Parameters.AddWithValue("@p_address", txtCustomerAddress.Text);
+            g_proc.sqlCommand.Parameters.AddWithValue("@p_contactno", txtCustomerContactNum.Text);
+            g_proc.sqlCommand.Parameters.AddWithValue("@p_emailadd", txtCustomerAddress.Text);
+            g_proc.sqlCommand.Parameters.AddWithValue("@p_cust_photo", imgCustomer);
+            g_proc.sqlCommand.ExecuteNonQuery();
+
+            MessageBox.Show("Recorded Successfully Saved", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("" + ex.Message);
+        }
+    }
+    private void frmCustomer_Load(object sender, EventArgs e)
+    {
+        txtCustomerName.Select();
+        g_proc.checkDatabaseConnection();
+    }
+}
+
+//Global Procedure Class
+internal class GlobalProcedure
+{
+    //global variable
+    public string servername;
+    public string databasename;
+    public string username;
+    public string password;
+    public string port;
+
+    public MySqlConnection conLaundry;
+    public MySqlCommand sqlCommand;
+    public string strConnection;
+
+    public bool fncDatabseConnection()
+    {
+        try
+        {
+            servername = "localhost";
+            databasename = "laundry";
+            username = "root";
+            password = ""; //your server password
+            port = "3306";
+
+            //implement connection
+            strConnection = "Server=" + servername + ";" +
+                "Database=" + databasename + ";" +
+                "User=" + username + ";" +
+                "Password=" + password + ";" +
+                "Port=" + port + ";" +
+                "Convert Zero Datetime=true";
+
+            conLaundry = new MySqlConnection(strConnection);
+            sqlCommand = new MySqlCommand(strConnection, conLaundry);
+            if (conLaundry.State == System.Data.ConnectionState.Closed)
+            {
+                sqlCommand.Connection = conLaundry;
+                conLaundry.Open();
+                return true;
+            }
+            else
+            {
+                conLaundry.Close();
+                return false;
+            }
+        }
+        catch (Exception err) 
+        {
+            MessageBox.Show("Error Message" + err.Message);
+        }
+        return false;
+    }
+
+    public void checkDatabaseConnection()
+    {
+        if (fncDatabseConnection().Equals("False"))
+        {
+            conLaundry.Open();
+        }
+        else
+        {
+            //do nothing
+        }
+    }
+}
+
+//SQL Proc
+PROCEDURE `laundry`.`procAddCustomer`(IN p_fullname VARCHAR(80),
+					IN p_birthdate DATE,
+					IN p_gender VARCHAR(6),
+					IN p_address VARCHAR(150),
+					IN p_contactno VARCHAR(11),
+					IN p_emailadd VARCHAR(45),
+					IN p_cust_photo TEXT)
+    
+	BEGIN
+	
+		INSERT INTO tblcustomer (fullname, 
+					birthdate,
+					gender,
+					address,
+					contactno,
+					emailadd,
+					cust_photo)
+		VALUES (p_fullname, 
+			p_birthdate,
+			p_gender,
+			p_address,
+			p_contactno,
+			p_emailadd,
+			p_cust_photo);
+
+	END$$
+
+// procAddStaff
+DELIMITER $$
+
+CREATE
+    /*[DEFINER = { user | CURRENT_USER }]*/
+    PROCEDURE `laundry`.`procAddStaff`(IN p_fullname VARCHAR(80),
+					IN p_birthdate DATE,
+					IN p_gender VARCHAR(6),
+					IN p_address VARCHAR(150),
+					IN p_contactno VARCHAR(11),
+					IN p_emailadd VARCHAR(45),
+					IN p_username VARCHAR(45),
+					IN p_password VARCHAR(50))
+    
+	BEGIN
+	
+		INSERT INTO tblstaff ( fullname, 
+					birthdate,
+					gender,
+					address,
+					contactno,
+					emailadd,
+					username,
+					PASSWORD)
+		VALUES (p_fullname, 
+			p_birthdate,
+			p_gender,
+			p_address,
+			p_contactno,
+			p_emailadd,
+			p_username,
+			p_password);
+
+	END$$

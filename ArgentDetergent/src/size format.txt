@@ -1,0 +1,4 @@
+winsize 816, 489
+
+groupboxacc size 698, 411
+groupboxx location 	109, 46
