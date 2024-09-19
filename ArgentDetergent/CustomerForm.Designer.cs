@@ -42,6 +42,7 @@
             this.lblFullName = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.picboxProfile = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxProfile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.dateBirthdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateBirthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.dateBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateBirthdate.Location = new System.Drawing.Point(416, 174);
+            this.dateBirthdate.Location = new System.Drawing.Point(419, 226);
             this.dateBirthdate.MaxDate = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
             this.dateBirthdate.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dateBirthdate.Name = "dateBirthdate";
@@ -66,7 +67,7 @@
             "Male",
             "Female",
             "Other"});
-            this.cboGender.Location = new System.Drawing.Point(416, 84);
+            this.cboGender.Location = new System.Drawing.Point(419, 136);
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(209, 33);
             this.cboGender.TabIndex = 32;
@@ -75,7 +76,7 @@
             // 
             this.txtboxEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxEmail.Location = new System.Drawing.Point(33, 368);
+            this.txtboxEmail.Location = new System.Drawing.Point(36, 420);
             this.txtboxEmail.Name = "txtboxEmail";
             this.txtboxEmail.Size = new System.Drawing.Size(592, 31);
             this.txtboxEmail.TabIndex = 28;
@@ -84,7 +85,7 @@
             // 
             this.txtboxPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxPhone.Location = new System.Drawing.Point(33, 174);
+            this.txtboxPhone.Location = new System.Drawing.Point(36, 226);
             this.txtboxPhone.Name = "txtboxPhone";
             this.txtboxPhone.Size = new System.Drawing.Size(304, 31);
             this.txtboxPhone.TabIndex = 29;
@@ -93,7 +94,7 @@
             // 
             this.txtboxAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxAddress.Location = new System.Drawing.Point(33, 278);
+            this.txtboxAddress.Location = new System.Drawing.Point(36, 330);
             this.txtboxAddress.Name = "txtboxAddress";
             this.txtboxAddress.Size = new System.Drawing.Size(592, 31);
             this.txtboxAddress.TabIndex = 30;
@@ -102,7 +103,7 @@
             // 
             this.txtboxFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxFullName.Location = new System.Drawing.Point(33, 84);
+            this.txtboxFullName.Location = new System.Drawing.Point(36, 136);
             this.txtboxFullName.Name = "txtboxFullName";
             this.txtboxFullName.Size = new System.Drawing.Size(354, 31);
             this.txtboxFullName.TabIndex = 31;
@@ -113,7 +114,7 @@
             this.lblBirthdate.AutoSize = true;
             this.lblBirthdate.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBirthdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(209)))));
-            this.lblBirthdate.Location = new System.Drawing.Point(410, 138);
+            this.lblBirthdate.Location = new System.Drawing.Point(413, 190);
             this.lblBirthdate.Name = "lblBirthdate";
             this.lblBirthdate.Size = new System.Drawing.Size(172, 33);
             this.lblBirthdate.TabIndex = 22;
@@ -125,7 +126,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(209)))));
-            this.lblEmail.Location = new System.Drawing.Point(27, 332);
+            this.lblEmail.Location = new System.Drawing.Point(30, 384);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(241, 33);
             this.lblEmail.TabIndex = 23;
@@ -137,7 +138,7 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(209)))));
-            this.lblPhone.Location = new System.Drawing.Point(27, 138);
+            this.lblPhone.Location = new System.Drawing.Point(30, 190);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(246, 33);
             this.lblPhone.TabIndex = 24;
@@ -149,7 +150,7 @@
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(209)))));
-            this.lblGender.Location = new System.Drawing.Point(410, 48);
+            this.lblGender.Location = new System.Drawing.Point(413, 100);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(134, 33);
             this.lblGender.TabIndex = 25;
@@ -161,7 +162,7 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(209)))));
-            this.lblAddress.Location = new System.Drawing.Point(27, 242);
+            this.lblAddress.Location = new System.Drawing.Point(30, 294);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(150, 33);
             this.lblAddress.TabIndex = 26;
@@ -173,7 +174,7 @@
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(209)))));
-            this.lblFullName.Location = new System.Drawing.Point(27, 48);
+            this.lblFullName.Location = new System.Drawing.Point(30, 100);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(173, 33);
             this.lblFullName.TabIndex = 27;
@@ -183,7 +184,7 @@
             // 
             this.btnCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCreate.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F);
-            this.btnCreate.Location = new System.Drawing.Point(702, 449);
+            this.btnCreate.Location = new System.Drawing.Point(705, 501);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(300, 78);
             this.btnCreate.TabIndex = 21;
@@ -196,13 +197,25 @@
             this.picboxProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picboxProfile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picboxProfile.Image = global::ArgentDetergent.Properties.Resources.profilePicture;
-            this.picboxProfile.Location = new System.Drawing.Point(702, 48);
+            this.picboxProfile.Location = new System.Drawing.Point(705, 100);
             this.picboxProfile.Name = "picboxProfile";
             this.picboxProfile.Size = new System.Drawing.Size(300, 300);
             this.picboxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picboxProfile.TabIndex = 20;
             this.picboxProfile.TabStop = false;
             this.picboxProfile.Click += new System.EventHandler(this.picboxProfile_Click);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 20F);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(209)))));
+            this.lblTitle.Location = new System.Drawing.Point(30, 23);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(194, 39);
+            this.lblTitle.TabIndex = 27;
+            this.lblTitle.Text = "CUSTOMER";
             // 
             // frmCustomer
             // 
@@ -221,6 +234,7 @@
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblFullName);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.picboxProfile);
@@ -249,5 +263,6 @@
         private System.Windows.Forms.Label lblFullName;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.PictureBox picboxProfile;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

@@ -2,6 +2,7 @@
 using Org.BouncyCastle.Tls;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,9 @@ namespace Laundry
         public MySqlConnection conLaundry;
         public MySqlCommand sqlCommand;
         public string strConnection;
+        public MySqlDataAdapter sqlLaundryAdapter;
+        public DataTable datLaundry;
+
 
         public bool fncConnectToDatabase()
         {
