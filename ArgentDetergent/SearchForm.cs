@@ -17,6 +17,7 @@ namespace ArgentDetergent
         frmCustomer cust = new frmCustomer();
         GlobalProcedure g_proc = new GlobalProcedure();
         int row;
+        private System.Timers.Timer autocompleteTimer;
 
         public frmSearch()
         {
@@ -69,9 +70,86 @@ namespace ArgentDetergent
             }
         }
 
-        private void checkboxAutoComplete_CheckedChanged(object sender, EventArgs e)
+        private void func_AutoComplete()
         {
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            MySqlDataReader reader = null;
 
+
+            g_proc.sqlCommand.Parameters.Clear();
+            g_proc.sqlCommand.CommandText = "procAutoComplete";
+            g_proc.sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                txtboxSearch.AutoCompleteCustomSource.Clear();
+                g_proc.sqlCommand.Parameters.AddWithValue("@p_search", txtboxSearch.Text.Trim());
+                reader = g_proc.sqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    autoComplete.Add(reader.GetString(1));
+                }
+                txtboxSearch.AutoCompleteCustomSource = autoComplete;
+                txtboxSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                txtboxSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+            }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmCustomer frmCustomerAdd = new frmCustomer(); // Creates a temporary form
+            frmCustomerAdd.ControlBox = true;
+            frmCustomerAdd.MinimizeBox = false;
+            frmCustomerAdd.MaximizeBox = false;
+
+            frmCustomerAdd.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frmCustomerAdd.StartPosition = FormStartPosition.CenterScreen;
+            frmCustomerAdd.ShowDialog();
+            DisplayAllCustomer();
+        }
+
+        private void txtboxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (!checkboxAutoComplete.Checked || txtboxSearch == null)
+            {
+                return;
+            }
+
+            if (autocompleteTimer != null)
+            {
+                autocompleteTimer.Stop();
+                autocompleteTimer.Dispose();
+            }
+
+            autocompleteTimer = new System.Timers.Timer(1000);
+            autocompleteTimer.Elapsed += (s, args) =>
+            {
+                autocompleteTimer.Stop();
+                autocompleteTimer.Dispose();
+
+                if (txtboxSearch.InvokeRequired)
+                {
+                    txtboxSearch.Invoke(new Action(func_AutoComplete));
+                }
+                else
+                {
+                    func_AutoComplete();
+                }
+            };
+            autocompleteTimer.Start();
+        }
+
     }
 }

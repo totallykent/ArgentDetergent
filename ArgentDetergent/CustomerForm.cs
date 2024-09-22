@@ -24,6 +24,7 @@ namespace ArgentDetergent
             InitializeComponent();
             this.cboGender.DropDownStyle = ComboBoxStyle.DropDownList;
             cboGender.SelectedIndex = 0;
+            dateBirthdate.Value = DateTime.Now;
             this.g_proc.fncConnectToDatabase();
         }
 
@@ -33,6 +34,7 @@ namespace ArgentDetergent
             txtboxAddress.Clear();
             txtboxPhone.Clear();
             txtboxEmail.Clear();
+            dateBirthdate.Value = DateTime.Now;
             cboGender.SelectedIndex = 0;
             picboxProfile.Load("../../src/profilePicture.png");
         }

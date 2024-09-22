@@ -184,23 +184,28 @@ CREATE
 DELIMITER $$
 
 CREATE
-    /*[DEFINER = { user | CURRENT_USER }]*/
     PROCEDURE `laundry`.`procDisplayAllcustomer`()
-    /*LANGUAGE SQL
-    | [NOT] DETERMINISTIC
-    | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
-    | SQL SECURITY { DEFINER | INVOKER }
-    | COMMENT 'string'*/
 	BEGIN
-		SELECT 
-			id,
-			fullname,
-			birthdate,
-			gender,
-			address,
-			contactno,
-			emailadd
+		SELECT *
 		FROM `laundry`.`tblcustomer`;
 	END$$
+
+DELIMITER ;
+
+// procAutoComplete
+DELIMITER $$
+
+USE `laundry`$$
+
+DROP PROCEDURE IF EXISTS `procAutoComplete`$$
+
+CREATE
+
+	PROCEDURE `procAutoComplete`(IN p_search VARCHAR(255))
+		BEGIN
+		    SELECT *
+		    FROM `laundry`.`tblcustomer`
+		    WHERE fullname LIKE CONCAT('%', p_search, '%');
+		END$$
 
 DELIMITER ;
