@@ -149,3 +149,15 @@ CREATE
 	END$$
 
 DELIMITER ;
+
+//procDeleteCustomer
+
+DELIMITER $$
+
+CREATE
+    PROCEDURE `laundry`.`procDeleteCustomer`(IN p_customerID INT)
+	BEGIN
+		DELETE FROM tblcustomer WHERE id = p_customerID;
+	END$$
+
+DELIMITER ;

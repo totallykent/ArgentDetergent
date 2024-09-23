@@ -163,5 +163,24 @@ namespace ArgentDetergent
             }
             DisplayAllCustomer();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                g_proc.sqlCommand.Parameters.Clear();
+                g_proc.sqlCommand.CommandText = "procDeleteCustomer";
+                g_proc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                g_proc.sqlCommand.Parameters.AddWithValue("@p_customerID", Convert.ToInt32(grdSearch.CurrentRow.Cells[0].Value));
+                g_proc.sqlCommand.ExecuteNonQuery();
+
+                MessageBox.Show("Delete Record Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DisplayAllCustomer();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }
