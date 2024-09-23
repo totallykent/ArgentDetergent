@@ -130,6 +130,7 @@
             this.txtboxSearch.Name = "txtboxSearch";
             this.txtboxSearch.Size = new System.Drawing.Size(354, 31);
             this.txtboxSearch.TabIndex = 38;
+            this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
             // 
             // lblTotal
             // 

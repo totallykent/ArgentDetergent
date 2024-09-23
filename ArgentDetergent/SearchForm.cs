@@ -68,12 +68,6 @@ namespace ArgentDetergent
                 MessageBox.Show("" + ex.Message);
             }
         }
-
-<<<<<<< Updated upstream
-        private void checkboxAutoComplete_CheckedChanged(object sender, EventArgs e)
-        {
-
-=======
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmCustomer frmCustomerAdd = new frmCustomer(); // Creates a temporary form
@@ -85,15 +79,6 @@ namespace ArgentDetergent
             frmCustomerAdd.StartPosition = FormStartPosition.CenterScreen;
             frmCustomerAdd.ShowDialog();
             DisplayAllCustomer();
-        }
-
-        private void txtboxSearch_TextChanged(object sender, EventArgs e)
-        {
-            if (!checkboxAutoComplete.Checked)
-            {
-                return;
-            }
-            func_ProcSearch(txtboxSearch.Text, "procAutoComplete");
         }
 
         private void func_ProcSearch(string v_search, string proc)
@@ -145,14 +130,23 @@ namespace ArgentDetergent
             }
         }
 
-        private void checkboxAutoComplete_CheckedChanged(object sender, EventArgs e)
+        private void txtboxSearch_TextChanged(object sender, EventArgs e)
         {
-            btnSearch.Enabled = !checkboxAutoComplete.Checked;
+            if (!checkboxAutoComplete.Checked)
+            {
+                return;
+            }
+            func_ProcSearch(txtboxSearch.Text, "procAutoComplete");
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             func_ProcSearch(txtboxSearch.Text, "procSearchCustomer");
+        }
+
+        private void checkboxAutoComplete_CheckedChanged(object sender, EventArgs e)
+        {
+            btnSearch.Enabled = !checkboxAutoComplete.Checked;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -168,7 +162,6 @@ namespace ArgentDetergent
                 MessageBox.Show("Please select a record to edit.");
             }
             DisplayAllCustomer();
->>>>>>> Stashed changes
         }
     }
 }
