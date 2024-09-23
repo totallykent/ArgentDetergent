@@ -1,0 +1,151 @@
+//SQL Proc
+PROCEDURE `laundry`.`procAddCustomer`(IN p_fullname VARCHAR(80),
+					IN p_birthdate DATE,
+					IN p_gender VARCHAR(6),
+					IN p_address VARCHAR(150),
+					IN p_contactno VARCHAR(11),
+					IN p_emailadd VARCHAR(45),
+					IN p_cust_photo TEXT)
+    
+	BEGIN
+	
+		INSERT INTO tblcustomer (fullname, 
+					birthdate,
+					gender,
+					address,
+					contactno,
+					emailadd,
+					cust_photo)
+		VALUES (p_fullname, 
+			p_birthdate,
+			p_gender,
+			p_address,
+			p_contactno,
+			p_emailadd,
+			p_cust_photo);
+
+	END$$
+
+// procAddStaff
+DELIMITER $$
+
+CREATE
+    /*[DEFINER = { user | CURRENT_USER }]*/
+    PROCEDURE `laundry`.`procAddStaff`(IN p_fullname VARCHAR(80),
+					IN p_birthdate DATE,
+					IN p_gender VARCHAR(6),
+					IN p_address VARCHAR(150),
+					IN p_contactno VARCHAR(11),
+					IN p_emailadd VARCHAR(45),
+					IN p_username VARCHAR(45),
+					IN p_password VARCHAR(50))
+    
+	BEGIN
+	
+		INSERT INTO tblstaff ( fullname, 
+					birthdate,
+					gender,
+					address,
+					contactno,
+					emailadd,
+					username,
+					PASSWORD)
+		VALUES (p_fullname, 
+			p_birthdate,
+			p_gender,
+			p_address,
+			p_contactno,
+			p_emailadd,
+			p_username,
+			p_password);
+
+	END$$
+
+// procDisplayAllcustomer
+DELIMITER $$
+
+CREATE
+    PROCEDURE `laundry`.`procDisplayAllcustomer`()
+	BEGIN
+		SELECT *
+		FROM `laundry`.`tblcustomer`;
+	END$$
+
+DELIMITER ;
+
+// procAutoComplete
+DELIMITER $$
+
+USE `laundry`$$
+
+DROP PROCEDURE IF EXISTS `procAutoComplete`$$
+
+CREATE
+
+	PROCEDURE `procAutoComplete`(IN p_search VARCHAR(255))
+		BEGIN
+		    SELECT *
+		    FROM `laundry`.`tblcustomer`
+		    WHERE fullname LIKE CONCAT('%', p_search, '%');
+		END$$
+
+DELIMITER ;
+
+// procSearchCustomer
+DELIMITER $$
+
+CREATE
+    PROCEDURE `laundry`.`procSearchCustomer`(p_search VARCHAR(80))
+	BEGIN
+		SELECT * FROM tblcustomer WHERE fullname=p_search;
+	END$$
+
+DELIMITER ;
+
+// procShowEditCustomer
+DELIMITER $$
+
+CREATE PROCEDURE `laundry`.`procShowEditCustomer`(IN p_id INT)
+BEGIN
+    SELECT 
+        id,
+        fullname,
+        birthdate,
+        gender,
+        address,
+        contactno,
+        emailadd
+    FROM tblcustomer
+    WHERE id = p_id;
+END$$
+
+DELIMITER ;
+
+
+// procSaveEditCustomer
+
+DELIMITER $$
+
+CREATE
+    PROCEDURE `laundry`.`procSaveEditCustomer`(
+    IN p_id INT,
+    IN p_fullname VARCHAR(255),
+    IN p_birthdate DATE,
+    IN p_gender VARCHAR(10),
+    IN p_address TEXT,
+    IN p_contactno VARCHAR(50),
+    IN p_emailadd VARCHAR(255)
+)
+	BEGIN
+	    UPDATE tblcustomer
+	    SET 
+		fullname = p_fullname,
+		birthdate = p_birthdate,
+		gender = p_gender,
+		address = p_address,
+		contactno = p_contactno,
+		emailadd = p_emailadd
+	    WHERE id = p_id;
+	END$$
+
+DELIMITER ;

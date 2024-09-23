@@ -90,3 +90,4 @@ D:\Documents\git\ArgentDetergent\ArgentDetergent\obj\Debug\ArgentDetergent.cspro
 D:\Documents\git\ArgentDetergent\ArgentDetergent\obj\Debug\ArgentDe.13F51289.Up2Date
 D:\Documents\git\ArgentDetergent\ArgentDetergent\obj\Debug\ArgentDetergent.exe
 D:\Documents\git\ArgentDetergent\ArgentDetergent\obj\Debug\ArgentDetergent.pdb
+D:\Documents\git\ArgentDetergent\ArgentDetergent\obj\Debug\ArgentDetergent.frmEdit.resources

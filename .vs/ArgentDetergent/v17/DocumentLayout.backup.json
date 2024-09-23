@@ -3,12 +3,26 @@
   "WorkspaceRootPath": "D:\\Documents\\git\\ArgentDetergent\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|d:\\documents\\git\\argentdetergent\\argentdetergent\\argentdetergent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|solutionrelative:argentdetergent\\argentdetergent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|d:\\documents\\git\\argentdetergent\\argentdetergent\\editform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|solutionrelative:argentdetergent\\editform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|d:\\documents\\git\\argentdetergent\\argentdetergent\\editform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|solutionrelative:argentdetergent\\editform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|d:\\documents\\git\\argentdetergent\\argentdetergent\\searchform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|solutionrelative:argentdetergent\\searchform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|d:\\documents\\git\\argentdetergent\\argentdetergent\\searchform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|solutionrelative:argentdetergent\\searchform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+<<<<<<< Updated upstream
     },
     {
       "AbsoluteMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|d:\\documents\\git\\argentdetergent\\argentdetergent\\customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -25,6 +39,8 @@
     {
       "AbsoluteMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|D:\\Documents\\git\\ArgentDetergent\\argentdetergent\\globalprocedure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9900E7D6-6168-43FA-A63D-33A2904C39B8}|ArgentDetergent\\ArgentDetergent.csproj|solutionrelative:argentdetergent\\globalprocedure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -34,6 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -102,13 +119,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+=======
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+>>>>>>> Stashed changes
               "Title": "SearchForm.cs [Design]",
               "DocumentMoniker": "D:\\Documents\\git\\ArgentDetergent\\ArgentDetergent\\SearchForm.cs",
               "RelativeDocumentMoniker": "ArgentDetergent\\SearchForm.cs",
               "ToolTip": "D:\\Documents\\git\\ArgentDetergent\\ArgentDetergent\\SearchForm.cs [Design]",
               "RelativeToolTip": "ArgentDetergent\\SearchForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T15:52:14.066Z",
+              "WhenOpened": "2024-09-23T14:09:44.242Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SearchForm.cs",
+              "DocumentMoniker": "D:\\Documents\\git\\ArgentDetergent\\ArgentDetergent\\SearchForm.cs",
+              "RelativeDocumentMoniker": "ArgentDetergent\\SearchForm.cs",
+              "ToolTip": "D:\\Documents\\git\\ArgentDetergent\\ArgentDetergent\\SearchForm.cs",
+              "RelativeToolTip": "ArgentDetergent\\SearchForm.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwKIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T14:07:46.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditForm.cs",
+              "DocumentMoniker": "D:\\Documents\\git\\ArgentDetergent\\ArgentDetergent\\EditForm.cs",
+              "RelativeDocumentMoniker": "ArgentDetergent\\EditForm.cs",
+              "ToolTip": "D:\\Documents\\git\\ArgentDetergent\\ArgentDetergent\\EditForm.cs",
+              "RelativeToolTip": "ArgentDetergent\\EditForm.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowE0AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T14:07:13.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditForm.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\git\\ArgentDetergent\\ArgentDetergent\\EditForm.cs",
+              "RelativeDocumentMoniker": "ArgentDetergent\\EditForm.cs",
+              "ToolTip": "D:\\Documents\\git\\ArgentDetergent\\ArgentDetergent\\EditForm.cs [Design]",
+              "RelativeToolTip": "ArgentDetergent\\EditForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T14:03:46.14Z",
               "EditorCaption": " [Design]"
             }
           ]
